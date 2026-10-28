@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jewel Cruz | BSIT Student Portfolio</title>
+  <meta name="description" content="Portfolio of Jewel Mae R. Cruz, BSIT student at Bulacan State University.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --pink: #D88EA7;
+      --rose: #C57B94;
+      --soft: #F8E8EE;
+      --white: #fff;
+      --warm: #FAFAF9;
+      --ink: #2B282A;
+      --muted: #666063;
+      --line: #EBD9E0;
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "Figtree", system-ui, sans-serif;
+      --r: 18px;
+      --shadow: 0 8px 24px rgba(43, 40, 42, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      font: 16px/1.65 var(--sans);
+      color: var(--ink);
+      background: var(--warm);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--rose);
+      outline-offset: 3px;
+      border-radius: 6px;
+    }
+
+    .wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 72px 0;
+    }
+
+    h1, h2, h3 {
+      font-family: var(--serif);
+      line-height: 1.1;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      margin-bottom: 8px;
+    }
+
+    .lead {
+      color: var(--muted);
+      max-width: 60ch;
+      margin-bottom: 32px;
+    }
+
+    #progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0;
+      background: var(--rose);
+      z-index: 100;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(250, 250, 249, .85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav .wrap {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      height: 64px;
+    }
+
+    .brand {
+      font: 700 1.5rem var(--serif);
+      text-decoration: none;
+      margin-right: auto;
+    }
+
+    .links {
+      display: flex;
+      gap: 4px;
+      list-style: none;
+      padding: 0;
+    }
+
+    .links a {
+      display: block;
+      padding: 6px 12px;
+      border-radius: 99px;
+      text-decoration: none;
+      font-size: .9rem;
+      color: var(--muted);
+    }
+
+    .links a:hover,
+    .links a.active {
+      background: var(--soft);
+      color: var(--rose);
+      font-weight: 600;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 11px 22px;
+      border-radius: 99px;
+      border: 1.5px solid var(--rose);
+      font: 600 .95rem var(--sans);
+      cursor: pointer;
+      text-decoration: none;
+      transition: .2s;
+    }
+
+    .btn.primary {
+      background: var(--rose);
+      color: #fff;
+    }
+
+    .btn.primary:hover {
+      background: #b3687f;
+    }
+
+    .btn.ghost {
+      background: transparent;
+      color: var(--rose);
+    }
+
+    .btn.ghost:hover {
+      background: var(--soft);
+    }
+
+    .cli {
+      background: var(--ink);
+      color: #fff;
+      border-color: var(--ink);
+      padding: 7px 14px;
+      font-family: ui-monospace, Menlo, monospace;
+      font-size: .85rem;
+    }
+
+    .cli:hover {
+      background: var(--rose);
+      border-color: var(--rose);
+    }
+
+    #menu {
+      display: none;
+      background: none;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 6px 10px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+
+    .hero {
+      padding: 80px 0 64px;
+      background: linear-gradient(180deg, var(--soft), var(--warm));
+    }
+
+    .hero .wrap {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 99px;
+      padding: 4px 14px;
+      font-size: .85rem;
+      color: var(--rose);
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 6vw, 4.4rem);
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 52ch;
+      margin-bottom: 28px;
+    }
+
+    .hero .btns {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      box-shadow: var(--shadow);
+    }
+
+    .profile {
+      padding: 28px;
+      text-align: center;
+    }
+
+    .avatar {
+      width: 132px;
+      height: 132px;
+      border-radius: 50%;
+      margin: 0 auto 16px;
+      background: var(--soft);
+      border: 3px solid #fff;
+      box-shadow: 0 0 0 2px var(--pink), var(--shadow);
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      font: 700 2.6rem var(--serif);
+      color: var(--rose);
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .profile h3 {
+      font-size: 1.7rem;
+    }
+
+    .profile p {
+      font-size: .92rem;
+      margin: 4px 0 0;
+      color: var(--muted);
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .profile .chips {
+      justify-content: center;
+      margin-top: 16px;
+    }
+
+    .chip {
+      background: var(--soft);
+      color: #8a4a60;
+      border-radius: 99px;
+      padding: 4px 12px;
+      font-size: .82rem;
+      font-weight: 500;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+    }
+
+    .about p + p {
+      margin-top: 14px;
+    }
+
+    /* Focus Cards replacing Timeline */
+    .focus-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .focus-card {
+      padding: 18px;
+      background: var(--soft);
+      border-radius: 14px;
+      border: 1px solid var(--line);
+    }
+
+    .focus-card h4 {
+      font-size: 1.1rem;
+      color: var(--rose);
+      margin-bottom: 4px;
+      font-family: var(--serif);
+    }
+
+    .focus-card p {
+      font-size: .9rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .skills .card {
+      padding: 22px;
+      border-top: 4px solid var(--pink);
+    }
+
+    .skills .card:nth-child(2) {
+      border-top-color: var(--rose);
+    }
+
+    .skills .card:nth-child(3) {
+      border-top-color: #e6b3c4;
+    }
+
+    .skills .card:nth-child(4) {
+      border-top-color: var(--ink);
+    }
+
+    .skills h3 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+
+    .skills .note {
+      font-size: .85rem;
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    .filters {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .filters button {
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 99px;
+      padding: 7px 16px;
+      font: 500 .9rem var(--sans);
+      cursor: pointer;
+    }
+
+    .filters button:hover {
+      border-color: var(--pink);
+    }
+
+    .filters button[aria-pressed=true] {
+      background: var(--rose);
+      border-color: var(--rose);
+      color: #fff;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 22px;
+    }
+
+    .proj {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: transform .2s;
+    }
+
+
+    .proj .body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .proj h3 {
+      font-size: 1.35rem;
+    }
+
+    .proj .cat {
+      font-size: .82rem;
+      color: var(--rose);
+      font-weight: 600;
+    }
+
+    .proj p {
+      font-size: .92rem;
+      color: var(--muted);
+      flex: 1;
+    }
+
+    .proj .btn {
+      align-self: flex-start;
+      padding: 8px 18px;
+    }
+
+    .proj:hover {
+      transform: translateY(-3px);
+    }
+
+    /* Certificates styling with NetAcad Icon Badges */
+    .certs {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .cert {
+      padding: 18px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .cert-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--soft);
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    .cert-info h3 {
+      font: 600 1rem/1.3 var(--sans);
+      margin-bottom: 4px;
+    }
+
+    .cert-info p {
+      font-size: .85rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .lab {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .lab .card {
+      padding: 16px;
+    }
+
+    .lab svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .dev {
+      cursor: pointer;
+    }
+
+    .dev rect {
+      fill: #fff;
+      stroke: var(--pink);
+      stroke-width: 2;
+      transition: .2s;
+    }
+
+    .dev:hover rect,
+    .dev:focus rect,
+    .dev.sel rect {
+      fill: var(--soft);
+      stroke: var(--rose);
+      stroke-width: 3;
+    }
+
+    .dev text {
+      font: 600 13px var(--sans);
+      fill: var(--ink);
+      text-anchor: middle;
+      pointer-events: none;
+    }
+
+    .dev:focus {
+      outline: none;
+    }
+
+    .dev:focus-visible rect {
+      stroke: var(--ink);
+    }
+
+    .line {
+      stroke: var(--line);
+      stroke-width: 3;
+    }
+
+    #devinfo {
+      padding: 24px;
+    }
+
+    #devinfo h3 {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+
+    #devinfo dt {
+      font-weight: 600;
+      margin-top: 10px;
+      font-size: .9rem;
+      color: var(--rose);
+    }
+
+    #devinfo dd {
+      margin: 0;
+      font-size: .93rem;
+      color: var(--muted);
+    }
+
+    #devinfo code {
+      display: block;
+      background: var(--ink);
+      color: #f8e8ee;
+      border-radius: 10px;
+      padding: 10px 12px;
+      margin-top: 6px;
+      font: .8rem/1.5 ui-monospace, Menlo, monospace;
+      white-space: pre-wrap;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: .8rem;
+      background: var(--soft);
+      color: #8a4a60;
+      border-radius: 8px;
+      padding: 3px 10px;
+      margin-top: 12px;
+    }
+
+
+
+
+
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact .card {
+      padding: 40px 24px;
+    }
+
+    .contact .btns {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 28px;
+      color: var(--muted);
+      font-size: .85rem;
+      border-top: 1px solid var(--line);
+    }
+
+    dialog {
+      border: none;
+      border-radius: var(--r);
+      padding: 0;
+      max-width: min(720px, 92vw);
+      width: 100%;
+      max-height: 88vh;
+      box-shadow: 0 20px 60px rgba(43, 40, 42, .3);
+      color: var(--ink);
+      background: #fff;
+    }
+
+    dialog::backdrop {
+      background: rgba(43, 40, 42, .55);
+      backdrop-filter: blur(3px);
+    }
+
+    .mhead {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      background: #fff;
+    }
+
+    .mhead h3 {
+      font-size: 1.6rem;
+    }
+
+    .x {
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+
+    .x:hover {
+      background: var(--soft);
+    }
+
+    .mbody {
+      padding: 20px 24px 28px;
+    }
+
+    .mbody h4 {
+      font: 600 .95rem var(--sans);
+      color: var(--rose);
+      margin: 18px 0 6px;
+    }
+
+    .mbody ul {
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .mbody p {
+      color: var(--muted);
+    }
+
+
+    .pending {
+      background: var(--soft);
+      border-radius: 8px;
+      padding: 2px 6px;
+      color: #8a4a60;
+      font-size: .85rem;
+    }
+
+    .term {
+      background: var(--ink);
+      color: #f8e8ee;
+      font: .9rem/1.6 ui-monospace, Menlo, monospace;
+    }
+
+    .term .mhead {
+      background: var(--ink);
+      border-color: #444;
+    }
+
+    .term .mhead h3 {
+      font: 600 1rem ui-monospace, monospace;
+      color: #fff;
+    }
+
+    .term .x {
+      background: var(--ink);
+      color: #fff;
+      border-color: #555;
+    }
+
+    #out {
+      padding: 16px 24px;
+      height: 300px;
+      overflow: auto;
+      white-space: pre-wrap;
+    }
+
+    #out .cmd {
+      color: var(--pink);
+    }
+
+    .term form {
+      display: flex;
+      gap: 8px;
+      padding: 0 24px 20px;
+    }
+
+    .term input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #666;
+      color: #fff;
+      font: inherit;
+      padding: 6px 0;
+    }
+
+    .term input:focus {
+      outline: none;
+      border-color: var(--pink);
+    }
+
+    #lb {
+      max-width: min(900px, 94vw);
+      background: transparent;
+      box-shadow: none;
+      overflow: visible;
+    }
+
+    #lb img {
+      width: 100%;
+      max-height: 82vh;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+
+    #lb .x {
+      position: absolute;
+      top: -14px;
+      right: -14px;
+    }
+
+    @media (max-width: 860px) {
+      .hero .wrap,
+      .about,
+      .lab {
+        grid-template-columns: 1fr;
+      }
+
+      #menu {
+        display: block;
+      }
+
+      .links {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        flex-direction: column;
+        padding: 12px 24px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .links.open {
+        display: flex;
+      }
+
+      section {
+        padding: 52px 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+    }
+    /* ---------- Polish ---------- */
+    :root { --rose-text: #A8566F; }
+
+    .btn.primary { background: var(--rose-text); border-color: var(--rose-text); }
+    .btn.primary:hover { background: #8f4560; }
+    .btn.ghost { color: var(--rose-text); }
+    .links a:hover, .links a.active, .tag, .proj .cat, .focus-card h4, .mbody h4, #devinfo dt { color: var(--rose-text); }
+
+    main { counter-reset: sec; }
+    section h2::before {
+      counter-increment: sec;
+      content: "0" counter(sec);
+      display: block;
+      font: 600 .8rem var(--sans);
+      letter-spacing: .14em;
+      color: var(--rose-text);
+      margin-bottom: 6px;
+    }
+    .contact h2::before { display: none; }
+
+    section { padding: 88px 0; }
+    .proj { border-top: 4px solid var(--pink); }
+    .proj, .cert { transition: transform .2s, box-shadow .2s, border-color .2s; }
+    .proj:hover, .cert:hover { box-shadow: 0 14px 32px rgba(43, 40, 42, .09); border-color: var(--pink); }
+    .cert:hover { transform: translateY(-2px); }
+    h1 em { font-style: italic; color: var(--rose-text); }
+
+    .profile .role { color: var(--rose-text); font-weight: 600; margin-top: 6px; }
+    .status { margin-top: 16px; font-size: .85rem; }
+    .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #3c9d6b; margin-right: 6px; }
+
+    .textlink { all: unset; cursor: pointer; color: var(--rose-text); text-decoration: underline dotted; text-underline-offset: 4px; }
+    .textlink:hover { text-decoration-style: solid; }
+    .textlink:focus-visible { outline: 3px solid var(--rose); outline-offset: 3px; border-radius: 4px; }
+
+    @media (max-width: 860px) { section { padding: 60px 0; } }
+  </style>
+</head>
+<body>
+  <div id="progress" aria-hidden="true"></div>
+
+  <nav aria-label="Main">
+    <div class="wrap">
+      <a class="brand" href="#top">Jewel Cruz</a>
+      <button id="menu" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <ul class="links" id="links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certificates">Certificates</a></li>
+        <li><a href="#lab">Lab</a></li>
+        <li><a href="#beyond">Beyond the Code</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="btn cli" id="openCli" aria-haspopup="dialog">&gt;_ CLI</button>
+    </div>
+  </nav>
+
+  <main id="top">
+    <header class="hero">
+      <div class="wrap">
+        <div>
+          <span class="tag">BSIT Student at Bulacan State University</span>
+          <h1>Designing &amp; Building <em>Digital Systems</em></h1>
+          <p>I’m an IT student growing in both software development and networking. I enjoy building interfaces with code, working with databases, and learning how networks and servers keep everything connected.</p>
+          <div class="btns">
+            <a class="btn primary" href="#projects">Explore My Projects</a>
+            <a class="btn ghost" href="#about">About Me</a>
+          </div>
+        </div>
+        <aside class="card profile" aria-label="Profile summary">
+          <div class="avatar">
+            <img src="assets/profile.jpg" alt="Photo of Jewel Mae R. Cruz" width="132" height="132" onerror="this.replaceWith('JC')">
+          </div>
+          <h3>Jewel Mae R. Cruz</h3>
+          <p class="role">3rd-year BSIT · IT Infrastructure &amp; Networking</p>
+          <p>Bulacan State University, Malolos</p>
+          <div class="chips">
+            <span class="chip">Networking</span>
+            <span class="chip">Linux</span>
+            <span class="chip">Packet Tracer</span>
+            <span class="chip">Windows Server</span>
+            <span class="chip">MySQL</span>
+          </div>
+          <p class="status"><span class="dot"></span>Open to internships</p>
+        </aside>
+      </div>
+    </header>
+
+    <section id="about">
+      <div class="wrap">
+        <h2>About Me</h2>
+        <div class="about">
+          <div>
+            <p>I’m a Bachelor of Science in Information Technology student at Bulacan State University. My studies sit between two areas I enjoy: building software and understanding the networks it runs on.</p>
+            <p>On the software side I work with programming, system design, and database management. On the networking side I’m learning core concepts and how to troubleshoot them. I like turning ideas into working interfaces, and I’m keen to explore network setups and virtualized server environments as I learn.</p>
+            <p>I treat every course and project as practice, and I’m always looking for the next thing to learn.</p>
+          </div>
+          <div>
+            <h3 style="font-size:1.5rem;margin-bottom:14px">Academic Focus &amp; Highlights</h3>
+            <div class="focus-grid">
+              <div class="focus-card">
+                <h4>Software &amp; Web Development</h4>
+                <p>Building client-server systems, database management, and designing functional web and GUI interfaces.</p>
+              </div>
+              <div class="focus-card">
+                <h4>Networking &amp; Infrastructure</h4>
+                <p>Configuring routers, switches, VLANs, and IP addressing in Cisco Packet Tracer environments.</p>
+              </div>
+              <div class="focus-card">
+                <h4>Systems &amp; Server Admin</h4>
+                <p>Practicing Linux CLI navigation, OS fundamentals, and virtualized Windows Server deployment.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" style="background:#fff">
+      <div class="wrap">
+        <h2>Technical Skills</h2>
+        <p class="lead">Technologies I’ve learned or used in coursework and projects.</p>
+        <div class="skills">
+          <div class="card">
+            <h3>Development</h3>
+            <div class="chips">
+              <span class="chip">Java</span>
+              <span class="chip">PHP</span>
+              <span class="chip">HTML5</span>
+              <span class="chip">CSS3</span>
+              <span class="chip">JavaScript</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Databases</h3>
+            <div class="chips">
+              <span class="chip">MySQL</span>
+              <span class="chip">T-SQL</span>
+              <span class="chip">MongoDB Atlas</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Networking</h3>
+            <div class="chips">
+              <span class="chip">Cisco Packet Tracer</span>
+              <span class="chip">IP addressing &amp; subnetting</span>
+              <span class="chip">VLANs &amp; routing</span>
+              <span class="chip">Networking fundamentals</span>
+              <span class="chip">Troubleshooting</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Systems &amp; Tools</h3>
+            <div class="chips">
+              <span class="chip">Windows Server</span>
+              <span class="chip">Linux command line</span>
+              <span class="chip">VirtualBox</span>
+              <span class="chip">Git &amp; GitHub</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <h2>Featured Projects</h2>
+        <p class="lead">Academic projects built for my coursework.</p>
+        <div class="filters" id="filters" role="group" aria-label="Filter projects"></div>
+        <div class="grid" id="projGrid"></div>
+      </div>
+    </section>
+
+    <section id="certificates" style="background:#fff">
+      <div class="wrap">
+        <h2>Cisco Networking Academy Certificates</h2>
+        <p class="lead">Completed courses, listed by issue date.</p>
+        <div class="certs">
+          <article class="card cert">
+            <div class="cert-icon">🛡️</div>
+            <div class="cert-info">
+              <h3>Networking Devices &amp; Initial Config</h3>
+              <p>Issued: Aug 26, 2026</p>
+            </div>
+          </article>
+          <article class="card cert">
+            <div class="cert-icon">💻</div>
+            <div class="cert-info">
+              <h3>Linux Essentials</h3>
+              <p>Issued: Aug 07, 2026</p>
+            </div>
+          </article>
+          <article class="card cert">
+            <div class="cert-icon">📶</div>
+            <div class="cert-info">
+              <h3>Networking Basics</h3>
+              <p>Issued: Aug 01, 2026</p>
+            </div>
+          </article>
+          <article class="card cert">
+            <div class="cert-icon">🎛️</div>
+            <div class="cert-info">
+              <h3>Linux Unhatched</h3>
+              <p>Issued: Jul 21, 2026</p>
+            </div>
+          </article>
+          <article class="card cert">
+            <div class="cert-icon">🌐</div>
+            <div class="cert-info">
+              <h3>Introduction to IoT</h3>
+              <p>Issued: Apr 29, 2025</p>
+            </div>
+          </article>
+          <article class="card cert">
+            <div class="cert-icon">🔒</div>
+            <div class="cert-info">
+              <h3>Digital Awareness</h3>
+              <p>Issued: Apr 14, 2025</p>
+            </div>
+          </article>
+          <article class="card cert">
+            <div class="cert-icon">🖥️</div>
+            <div class="cert-info">
+              <h3>Operating Systems Basics</h3>
+              <p>Issued: Mar 07, 2025</p>
+            </div>
+          </article>
+          <article class="card cert">
+            <div class="cert-icon">🔧</div>
+            <div class="cert-info">
+              <h3>Computer Hardware Basics</h3>
+              <p>Issued: Feb 25, 2025</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="lab">
+      <div class="wrap">
+        <h2>Networking Lab: Topology Viewer</h2>
+        <p class="lead">Select a device to see its role and a sample configuration note.</p>
+        <div class="lab">
+          <div class="card">
+            <svg viewBox="0 0 520 330" role="group" aria-label="Network topology: router, switch, server, two clients">
+              <line class="line" x1="260" y1="60" x2="260" y2="140"/>
+              <line class="line" x1="260" y1="140" x2="120" y2="240"/>
+              <line class="line" x1="260" y1="140" x2="400" y2="240"/>
+              <line class="line" x1="260" y1="140" x2="260" y2="260"/>
+              <g class="dev" data-d="router" tabindex="0" role="button" aria-label="Router">
+                <rect x="200" y="30" width="120" height="50" rx="12"/>
+                <text x="260" y="60">Router</text>
+              </g>
+              <g class="dev" data-d="switch" tabindex="0" role="button" aria-label="Switch">
+                <rect x="200" y="115" width="120" height="50" rx="12"/>
+                <text x="260" y="145">Switch</text>
+              </g>
+              <g class="dev" data-d="server" tabindex="0" role="button" aria-label="Server">
+                <rect x="200" y="235" width="120" height="50" rx="12"/>
+                <text x="260" y="265">Server</text>
+              </g>
+              <g class="dev" data-d="client" tabindex="0" role="button" aria-label="Client PC 1">
+                <rect x="50" y="215" width="120" height="50" rx="12"/>
+                <text x="110" y="245">Client PC 1</text>
+              </g>
+              <g class="dev" data-d="client" tabindex="0" role="button" aria-label="Client PC 2">
+                <rect x="350" y="215" width="120" height="50" rx="12"/>
+                <text x="410" y="245">Client PC 2</text>
+              </g>
+            </svg>
+            <span class="badge">Educational, simulated example. Not a deployed network.</span>
+          </div>
+          <div class="card" id="devinfo" aria-live="polite">
+            <h3>Pick a device</h3>
+            <p style="color:var(--muted)">Click or press Enter on any device in the diagram.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="beyond" style="background:#fff">
+      <div class="wrap">
+        <h2>Beyond the Code</h2>
+        <p class="lead">Outside of class, I play
+          <button class="textlink" id="mlOpen" type="button" aria-haspopup="dialog">Mobile Legends: Bang Bang</button>.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="wrap">
+        <h2>Contact</h2>
+        <div class="card">
+          <p class="lead" style="margin:0 auto">Open to internship opportunities and conversations about IT.</p>
+          <p style="margin-top:10px"><b>cruzjewelreyes04@gmail.com</b></p>
+          <div class="btns">
+            <a class="btn primary" href="mailto:cruzjewelreyes04@gmail.com">Send an Email</a>
+            <a class="btn ghost" href="resume.pdf" download="Jewel-Cruz-Resume.pdf">Download My CV</a>
+            <a class="btn ghost" href="https://github.com/studentjewel" target="_blank" rel="noopener" id="gh">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 Jewel Mae R. Cruz · BSIT, Bulacan State University</footer>
+
+  <dialog id="projModal" aria-labelledby="pmTitle">
+    <div class="mhead">
+      <h3 id="pmTitle"></h3>
+      <button class="x" data-close aria-label="Close">✕</button>
+    </div>
+    <div class="mbody" id="pmBody"></div>
+  </dialog>
+
+  <dialog id="cliModal" class="term" aria-label="Terminal">
+    <div class="mhead">
+      <h3>jewel@portfolio:~$</h3>
+      <button class="x" data-close aria-label="Close terminal">✕</button>
+    </div>
+    <div id="out" aria-live="polite"></div>
+    <form id="cliForm">
+      <label for="cmd" class="cmd" style="color:#D88EA7">&gt;</label>
+      <input id="cmd" autocomplete="off" spellcheck="false" aria-label="Command">
+    </form>
+  </dialog>
+
+  <dialog id="lb" aria-label="Screenshot viewer">
+    <button class="x" data-close aria-label="Close image">✕</button>
+    <img src="assets/mobile-legends.jpeg" alt="Mobile Legends: Bang Bang screenshot, enlarged" loading="lazy">
+  </dialog>
+
+  <script>
+    const projects = [
+      {
+        id: "payroll",
+        name: "Kape-BulSU Payroll System",
+        cats: ["System Development"],
+        label: "System Development / Client-Server",
+        tech: ["Java", "PHP", "MySQL"],
+        short: "A client-server payroll system built with a custom coffee-themed Java Swing UI and MySQL backend.",
+        overview: "An automated payroll system developed to streamline employee record management and salary computations.",
+        need: "Manual payroll processes and spreadsheet tracking are slow, prone to computation errors, and difficult to audit.",
+        features: [
+          "Programmatic Java Swing user interface with a minimalist, coffee-themed aesthetic",
+          "Employee record and profile management module",
+          "MySQL database connectivity integrated via PHP backend endpoints"
+        ],
+        role: "Lead UI Designer & System Developer. Programmed the Java Swing interface, designed database schemas in MySQL, and handled client-server logic.",
+        challenges: "Building a clean and responsive UI programmatically in Java Swing without using drag-and-drop tools. Solved by implementing custom layout managers and modular component design."
+      },
+      {
+        id: "budget",
+        name: "Budget Supreme",
+        cats: ["Web Development", "Database Systems"],
+        label: "Web Development / Database Systems",
+        tech: ["HTML5", "CSS3", "JavaScript", "PHP", "MySQL"],
+        short: "A web-based budgeting tool featuring user authentication and Excel data import capabilities.",
+        overview: "A personal finance tracking application designed to help users monitor income, categorize daily expenses, and analyze spending habits.",
+        need: "Users often struggle with financial tracking when lacking an intuitive system that visually summarizes expenses and allows spreadsheet imports.",
+        features: [
+          "User authentication and secure session management",
+          "Categorized income and expense logging with real-time balance computation",
+          "Excel/Spreadsheet file import and export functionality for batch records",
+          "Interactive visual summary reports for monthly budget tracking"
+        ],
+        role: "Full-Stack Developer. Designed the web interface using HTML/CSS/JS, built dynamic script logic, and structured the MySQL database backend.",
+        challenges: "Parsing and validating external Excel spreadsheet files directly into structured database records. Solved by utilizing JavaScript file-reader modules paired with server-side validation."
+      },
+      {
+        id: "ojt",
+        name: "CICT IS Web-Based Internship and OJT Tracking System",
+        cats: ["Web Development"],
+        label: "Web Development / Information Systems",
+        tech: ["HTML5", "CSS3", "JavaScript", "PHP", "MySQL"],
+        short: "A centralized web application for monitoring student OJT progress, documents, and host companies.",
+        overview: "An academic information system built for Bulacan State University CICT to manage internship records, document compliance, and coordinator evaluations.",
+        need: "Tracking student OJT requirements, rendered hours, and company deployments manually across hundreds of students is inefficient and hard to audit.",
+        features: [
+          "Student intern profile management and document submission portal",
+          "Weekly accomplishment logging and rendered hours monitoring",
+          "Coordinator admin dashboard for requirement verification and approval"
+        ],
+        role: "System Analyst & UI/UX Designer. Authored system documentation, structured relational database schemas, and designed responsive dashboard prototypes for document tracking.",
+challenges: "Architecting multi-role access control (Students, Coordinators,) and dynamic document workflows in concept. Solved by designing detailed role-based permission matrices and process flow diagrams."
+      }
+    ];
+
+    const $ = s => document.querySelector(s);
+    const $$ = s => [...document.querySelectorAll(s)];
+    const esc = s => s.replace(/[&<>]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
+
+    /* progress + active nav */
+    const bar = $("#progress");
+    const secs = $$("main section[id]");
+    const navA = $$(".links a");
+
+    function onScroll() {
+      const h = document.documentElement;
+      bar.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + "%";
+      let cur = "";
+      secs.forEach(s => {
+        if (s.getBoundingClientRect().top <= 120) cur = s.id;
+      });
+      navA.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + cur));
+    }
+
+    addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    $("#menu").onclick = e => {
+      const o = $("#links").classList.toggle("open");
+      e.currentTarget.setAttribute("aria-expanded", o);
+    };
+
+    navA.forEach(a => a.addEventListener("click", () => $("#links").classList.remove("open")));
+
+    /* projects */
+    const grid = $("#projGrid");
+    grid.innerHTML = projects.map(p => `
+      <article class="card proj" data-id="${p.id}">
+        <div class="body">
+          <span class="cat">${p.label}</span>
+          <h3>${p.name}</h3>
+          <div class="chips">${p.tech.map(t => `<span class="chip">${t}</span>`).join("")}</div>
+          <p>${p.short}</p>
+          <button class="btn ghost" data-open="${p.id}">View Details</button>
+        </div>
+      </article>
+    `).join("");
+
+    const cats = ["All", ...new Set(projects.flatMap(p => p.cats))];
+    const fb = $("#filters");
+    fb.innerHTML = cats.map((c, i) => `
+      <button data-filter="${c}" aria-pressed="${i === 0}">${c === "All" ? "All Projects" : c}</button>
+    `).join("");
+
+    fb.addEventListener("click", e => {
+      const b = e.target.closest("button");
+      if (!b) return;
+      $$("#filters button").forEach(x => x.setAttribute("aria-pressed", x === b));
+      applyFilter(b.dataset.filter);
+    });
+
+    function applyFilter(cat) {
+      projects.forEach(p => {
+        const card = grid.querySelector(`[data-id="${p.id}"]`);
+        const show = cat === "All" || p.cats.includes(cat);
+        card.hidden = !show;
+      });
+    }
+
+    /* modals */
+    function openDlg(d) {
+      d.showModal();
+    }
+
+    $$("dialog").forEach(d => {
+      d.addEventListener("click", e => {
+        if (e.target === d || e.target.closest("[data-close]")) d.close();
+      });
+    });
+
+    grid.addEventListener("click", e => {
+      const b = e.target.closest("[data-open]");
+      if (!b) return;
+      const p = projects.find(x => x.id === b.dataset.open);
+      $("#pmTitle").textContent = p.name;
+      const links = [
+        p.gh && `<a href="${p.gh}" target="_blank" rel="noopener">GitHub</a>`,
+        p.demo && `<a href="${p.demo}" target="_blank" rel="noopener">Live demo</a>`
+      ].filter(Boolean).join(" · ");
+      $("#pmBody").innerHTML = `
+        <h4>Overview</h4><p>${p.overview}</p>
+        <h4>Problem or need</h4><p>${p.need}</p>
+        <h4>Technologies</h4><div class="chips">${p.tech.map(t => `<span class="chip">${t}</span>`).join("")}</div>
+        <h4>My role</h4><p>${p.role}</p>
+        <h4>Main features</h4><ul>${p.features.map(f => `<li>${f}</li>`).join("")}</ul>
+        <h4>Challenges and solutions</h4><p>${p.challenges}</p>
+        ${links ? `<h4>Links</h4><p>${links}</p>` : ""}
+      `;
+      openDlg($("#projModal"));
+    });
+
+    /* lightbox */
+    $("#mlOpen").onclick = () => openDlg($("#lb"));
+
+    /* topology */
+    const devs = {
+      router: {
+        t: "Router",
+        role: "Connects the local network to other networks and forwards packets between them.",
+        place: "Top of the diagram, at the network edge.",
+        cfg: "Interface IP addressing, default routes, DHCP, and inter-VLAN routing.",
+        note: "interface g0/0\n ip address 192.168.10.1 255.255.255.0\n no shutdown"
+      },
+      switch: {
+        t: "Switch",
+        role: "Connects local devices and forwards frames using MAC addresses.",
+        place: "Center of the LAN, linking the router, server and clients.",
+        cfg: "VLANs, access and trunk ports, and port security.",
+        note: "vlan 10\n name STUDENTS\ninterface f0/1\n switchport mode access\n switchport access vlan 10"
+      },
+      server: {
+        t: "Server",
+        role: "Provides shared services such as files, web, or directory services to clients.",
+        place: "Connected to the switch with a fixed address.",
+        cfg: "Static IP, services, firewall rules, and user accounts.",
+        note: "Troubleshooting: if clients cannot reach the server, ping its static IP, then check the cable, VLAN and firewall."
+      },
+      client: {
+        t: "Client PC",
+        role: "An end-user device that requests network services.",
+        place: "Edge of the network, attached to a switch port.",
+        cfg: "DHCP or static IP, subnet mask, default gateway and DNS.",
+        note: "Troubleshooting: run ipconfig, ping the gateway, then ping an outside address to find where the connection breaks."
+      }
+    };
+
+    function showDev(g) {
+      $$(".dev").forEach(x => x.classList.toggle("sel", x === g));
+      const d = devs[g.dataset.d];
+      $("#devinfo").innerHTML = `
+        <h3>${d.t}</h3>
+        <dl>
+          <dt>Role</dt><dd>${d.role}</dd>
+          <dt>Place in the network</dt><dd>${d.place}</dd>
+          <dt>Configuration concepts</dt><dd>${d.cfg}</dd>
+          <dt>Illustrative note</dt><dd><code>${esc(d.note)}</code></dd>
+        </dl>
+        <span class="badge">Simulated example</span>
+      `;
+    }
+
+    $$(".dev").forEach(g => {
+      g.onclick = () => showDev(g);
+      g.onkeydown = e => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          showDev(g);
+        }
+      };
+    });
+
+    /* CLI */
+    const out = $("#out");
+    const cmds = {
+      help: "Commands: help, about, skills, projects, clear",
+      about: "Jewel Mae R. Cruz, BSIT student at Bulacan State University. Interested in software development and networking.",
+      skills: "Development: Java, PHP, HTML5, CSS3, JavaScript\nDatabases: MySQL\nNetworking: Cisco Packet Tracer, subnetting, VLANs, routing, troubleshooting\nTools: Windows Server, Linux CLI, Git/GitHub",
+      projects: projects.map((p, i) => `${i + 1}. ${p.name}`).join("\n")
+    };
+
+    function print(t, c) {
+      const d = document.createElement("div");
+      if (c) d.className = c;
+      d.textContent = t;
+      out.appendChild(d);
+      out.scrollTop = out.scrollHeight;
+    }
+
+    $("#openCli").onclick = () => {
+      openDlg($("#cliModal"));
+      if (!out.children.length) print("Welcome! Type help to see commands.");
+      $("#cmd").focus();
+    };
+
+    $("#cliForm").onsubmit = e => {
+      e.preventDefault();
+      const v = $("#cmd").value.trim().toLowerCase();
+      $("#cmd").value = "";
+      if (!v) return;
+      print("> " + v, "cmd");
+      if (v === "clear") out.innerHTML = "";
+      else print(cmds[v] || `Command not found: ${v}. Type help.`);
+    };
+  </script>
+</body>
+</html>
